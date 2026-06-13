@@ -1,24 +1,25 @@
-# Klinik Cat Friends - Sistem Informasi Pendaftaran Pasien (Paket 3)
+# Klinik Kurnia - Sistem Informasi Pendaftaran Pasien
 
-##Nama : Dedi Kurniawan
-##NIM : H1H024022
-##Mata Kuliah : Pemrograman Web
+## Nama : Dedi Kurniawan
+## NIM : H1H024022
+## Mata Kuliah : Pemrograman Web
 
-Aplikasi web berbasis MVC menggunakan CodeIgniter 3 dan Bootstrap 5, dikhususkan untuk klinik hewan kucing. Desain antarmuka difokuskan pada fungsionalitas dengan tema warna hitam (*black solid theme*) yang *clean*, presisi, dan profesional.
+Aplikasi web berbasis MVC menggunakan CodeIgniter 3 dan Bootstrap 5, dikhususkan untuk sistem pendaftaran mandiri pasien di Klinik Kurnia. Desain antarmuka difokuskan pada fungsionalitas, responsivitas, dan kemudahan pengguna dengan pemisahan akses yang jelas antara area publik (*landing page*) dan area privat (*dashboard* pasien).
 
 ## Fitur Utama
-- **Autentikasi:** Login dan Register User (Pasien & Admin).
-- **Dashboard Pasien:** Pendaftaran sesi klinik untuk kucing peliharaan.
-- **Validasi Jam Operasional:** Pemilihan waktu sesi dikunci antara 09:00 WIB hingga 17:00 WIB.
-- **Tiket Sesi:** Pencetakan/penampilan tiket digital (berisi detail jadwal dan dokter).
-- **Dashboard Admin:** Monitoring seluruh jadwal pendaftaran dari pasien.
+- **Area Publik:** *Landing page* informatif yang menampilkan profil klinik, layanan, dan jadwal praktik dokter harian.
+- **Autentikasi Pasien:** Sistem Login dan Registrasi yang praktis menggunakan Nomor Handphone (menyimpan data NIK, Nama, dan Alamat).
+- **Dashboard Pasien:** Area privat yang memuat informasi statistik pendaftaran, daftar tiket/antrean aktif, serta riwayat kunjungan selesai.
+- **Pendaftaran Mandiri:** Form pendaftaran interaktif yang mencakup pemilihan jadwal dokter, input keluhan penyakit, serta opsi metode pembayaran (Umum / BPJS / Asuransi).
+- **E-Tiket & Kode Booking:** Pencetakan tiket digital otomatis (*print ready*) yang menampilkan detail hari, jam, poli tujuan, nama dokter, dan kode booking unik.
+- **Sistem Keamanan & Routing:** Navigasi ketat menggunakan sistem Controller (`base_url`), terkonfigurasi dengan `.htaccess` untuk URL *friendly* (tanpa `index.php`).
 
 ## Instalasi & Konfigurasi (XAMPP/Laragon)
-1. Pindahkan folder proyek ke `htdocs` (XAMPP) atau `www` (Laragon).
-2. Buat database baru di MySQL dengan nama `db_klinik_cat_friends`.
-3. Import file `db_klinik_cat_friends.sql` ke dalam database tersebut.
-4. Buka `application/config/database.php` dan sesuaikan kredensial:
-   ```php
+1. Pindahkan folder proyek ke `htdocs` (XAMPP) atau `www` (Laragon). Pastikan nama folder proyek adalah `klinik_kurnia`.
+2. Buat database baru di MySQL (via phpMyAdmin) dengan nama `db_klinik_kurnia`.
+3. Import file `db_klinik_kurnia.sql` ke dalam database tersebut.
+4. Buka file konfigurasi `application/config/database.php` dan sesuaikan kredensial berikut:
+```php
    'username' => 'root',
    'password' => '',
-   'database' => 'db_klinik_cat_friends',
+   'database' => 'db_klinik_kurnia',
